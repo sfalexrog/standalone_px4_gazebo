@@ -1,0 +1,31 @@
+<?xml version='1.0'?>
+<sdf version='1.6'>
+  <model name='iris_ros'>
+
+    <include>
+      <uri>model://iris</uri>
+    </include>
+
+    <include>
+      <uri>model://rpi_cam_pinhole</uri>
+      <!-- <uri>model://rpi_cam</uri> -->
+      <pose>0.05 0 -0.04 0 1.5707963 0</pose>
+      <!-- <pose>0.06 0 1.047 0 1.57 0</pose> -->
+    </include>
+
+    <include>
+      <uri>model://lidar_vl53l1x</uri>
+      <pose>0.03 0 -0.045 0 0 0</pose>
+    </include>
+
+    <joint name="rpi_cam_joint" type="fixed">
+      <child>rpi_cam::cam_link</child>
+      <parent>iris::base_link</parent>
+    </joint>
+
+    <joint name="lidar_joint" type="fixed">
+      <child>lidar_vl53l1x::lidar_link</child>
+      <parent>iris::base_link</parent>
+    </joint>
+  </model>
+</sdf>

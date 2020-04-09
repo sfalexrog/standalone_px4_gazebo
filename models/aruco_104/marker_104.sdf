@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<sdf version="1.5">
+    <model name="aruco_104">
+        <static>true</static>
+        <link name="marker_104_link">
+            <pose>0 0 1e-3 0 0 1.5707963267948966</pose>
+            <collision name="collision_marker_104">
+                <geometry>
+                    <box>
+                        <size>0.44 0.44 1e-3</size>
+                    </box>
+                </geometry>
+            </collision>
+            <visual name="visual_marker_104">
+                <cast_shadows>false</cast_shadows>
+                <geometry>
+                    <box>
+                        <size>0.44 0.44 1e-3</size>
+                    </box>
+                </geometry>
+                <material>
+                    <script>
+                        <uri>model://aruco_104/materials/scripts</uri>
+                        <uri>model://aruco_104/materials/textures</uri>
+                        <name>aruco/marker_104</name>
+                    </script>
+                </material>
+            </visual>
+        </link>
+    </model>
+</sdf>

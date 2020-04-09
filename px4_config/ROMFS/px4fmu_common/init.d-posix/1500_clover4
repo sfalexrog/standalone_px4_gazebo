@@ -1,0 +1,15 @@
+#!/bin/sh
+#
+# @name COEX Clover 4 (simulated)
+#
+# @type Quadrotor x
+# @class Copter
+#
+# @maintainer Oleg Kalachev <okalachev@gmail.com>
+# @maintainer Alexey Rogachevskiy <sfalexrog@gmail.com>
+#
+
+sh /etc/init.d/rc.mc_defaults
+
+set MIXER quad_x
+set PWM_OUT 1234

@@ -1,0 +1,44 @@
+<?xml version='1.0'?>
+<sdf version='1.5'>
+  <model name='clever_opt_flow'>
+
+    <include>
+      <uri>model://clever</uri>
+    </include>
+
+    <include>
+      <uri>model://rpi_cam_pinhole</uri>
+      <pose>0.06 0 -0.047 0 1.57 0</pose>
+      <!-- <pose>0.06 0 1.047 0 1.57 0</pose> -->
+    </include>
+
+    <include>
+      <uri>model://lidar_vl53l1x</uri>
+      <pose>0.03 0 -0.045 0 0 0</pose>
+    </include>
+
+    <joint name="rpi_cam_joint" type="fixed">
+      <child>rpi_cam::cam_link</child>
+      <parent>clever::base_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+        </limit>
+      </axis>
+    </joint>
+
+    <joint name="lidar_joint" type="fixed">
+      <child>lidar_vl53l1x::lidar_link</child>
+      <parent>clever::base_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+        </limit>
+      </axis>
+    </joint>
+  </model>
+</sdf>
